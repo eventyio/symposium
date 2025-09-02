@@ -31,7 +31,7 @@
         "filament/filament": "^3.3",
         "guzzlehttp/guzzle": "^7.10",
         "intervention/image": "^2.7",
-        "laravel/framework": "^12.26",
+        "laravel/framework": "^12.27",
         "laravel/passport": "^12.4",
         "laravel/scout": "^10.19",
         "laravel/slack-notification-channel": "^3.6",
