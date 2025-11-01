@@ -18,8 +18,6 @@ use App\Livewire\ConferenceList;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::view('test', 'auth.no-signups');
-
 Route::get('/', [HomeController::class, 'show'])->name('home');
 
 Route::get('what-is-this', function () {
