@@ -16,17 +16,14 @@ class SocialLoginController extends Controller
         return Socialite::driver($service)->redirect();
     }
 
-    public function callback($service, Request $request): RedirectResponse
+    public function callback($service, Request $request)
     {
         $serviceUser = Socialite::driver($service)->user();
 
         $user = $this->getExistingUser($serviceUser, $service);
 
         if (! $user) {
-            $user = User::create([
-                'name' => $serviceUser->getName(),
-                'email' => $serviceUser->getEmail(),
-            ]);
+            return view('auth.no-signups');
         }
 
         if (! $user->hasSocialLinked($service)) {
