@@ -22,11 +22,11 @@ class SocialLoginController extends Controller
 
         $user = $this->getExistingUser($serviceUser, $service);
 
-        if (! $user) {
+        if (!$user) {
             return view('auth.no-signups');
         }
 
-        if (! $user->hasSocialLinked($service)) {
+        if (!$user->hasSocialLinked($service)) {
             $user->social()->create([
                 'social_id' => $serviceUser->getId(),
                 'service' => $service,
