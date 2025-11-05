@@ -22,7 +22,7 @@ class SocialLoginTest extends TestCase
     }
 
     /** @test */
-    public function logging_in_a_new_user(): void
+    public function redirecting_to_no_signups_view_when_logging_in_a_new_user(): void
     {
         $socialiteUser = $this->mock(SocialiteUser::class, function ($user) {
             $user->shouldReceive('getId')->andReturn(1234)
@@ -33,17 +33,13 @@ class SocialLoginTest extends TestCase
 
         $response = $this->get('login/github/callback');
 
-        $response->assertRedirect(route('dashboard'));
+        $response->assertOk();
+        $response->assertViewIs('auth.no-signups');
         $user = User::where([
             'email' => 'luke@rebels.net',
             'name' => 'Luke Skywalker',
         ])->first();
-        $this->assertNotNull($user);
-        $this->assertCount(1, $user->social);
-        tap($user->social->first(), function ($social) {
-            $this->assertEquals('github', $social->service);
-            $this->assertEquals(1234, $social->social_id);
-        });
+        $this->assertNull($user);
     }
 
     /** @test */
