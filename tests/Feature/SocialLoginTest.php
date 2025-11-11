@@ -7,13 +7,14 @@ use App\Models\UserSocial;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\Two\User as SocialiteUser;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class SocialLoginTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[Test]
     public function redirecting_to_socialite_service(): void
     {
         $response = $this->get('login/github');
@@ -21,7 +22,7 @@ class SocialLoginTest extends TestCase
         $response->assertRedirectContains('github.com');
     }
 
-    /** @test */
+    #[Test]
     public function redirecting_to_no_signups_view_when_logging_in_a_new_user(): void
     {
         $socialiteUser = $this->mock(SocialiteUser::class, function ($user) {
@@ -42,7 +43,7 @@ class SocialLoginTest extends TestCase
         $this->assertNull($user);
     }
 
-    /** @test */
+    #[Test]
     public function logging_in_an_existing_user_with_a_new_social_service(): void
     {
         $socialiteUser = $this->mock(SocialiteUser::class, function ($user) {
@@ -68,7 +69,7 @@ class SocialLoginTest extends TestCase
         });
     }
 
-    /** @test */
+    #[Test]
     public function logging_in_an_existing_user_with_an_existing_social_service(): void
     {
         $socialiteUser = $this->mock(SocialiteUser::class, function ($user) {
@@ -98,7 +99,7 @@ class SocialLoginTest extends TestCase
         });
     }
 
-    /** @test */
+    #[Test]
     public function authenticated_users_are_redirected_to_the_dashboard(): void
     {
         $user = User::factory()->create();
@@ -108,7 +109,7 @@ class SocialLoginTest extends TestCase
         $response->assertRedirect(route('dashboard'));
     }
 
-    /** @test */
+    #[Test]
     public function specifying_an_undefined_social_service(): void
     {
         $response = $this->get('login/skynet');

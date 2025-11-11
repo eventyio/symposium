@@ -480,7 +480,7 @@ class TalkTest extends TestCase
         $response->assertSuccessful();
     }
 
-    /** @test */
+    #[Test]
     public function users_cannot_see_the_edit_form_for_talks_they_dont_own(): void
     {
         $userA = User::factory()->create();

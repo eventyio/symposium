@@ -61,7 +61,7 @@ class RejectionTest extends TestCase
         $this->assertFalse($submission->refresh()->isRejected());
     }
 
-    /** @test */
+    #[Test]
     public function users_cannot_delete_rejections_belonging_to_other_users()
     {
         $userA = User::factory()->create();
