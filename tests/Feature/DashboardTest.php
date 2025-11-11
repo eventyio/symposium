@@ -6,13 +6,14 @@ use App\Models\Conference;
 use App\Models\Talk;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class DashboardTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[Test]
     public function including_favorited_conferences(): void
     {
         $user = User::factory()->create();
@@ -26,7 +27,7 @@ class DashboardTest extends TestCase
         $response->assertDontSee('Boring Conference');
     }
 
-    /** @test */
+    #[Test]
     public function including_submissions(): void
     {
         $user = User::factory()->create();

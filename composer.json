@@ -29,13 +29,13 @@
         "doctrine/dbal": "^3.9",
         "erusev/parsedown": "^1.7",
         "filament/filament": "^3.3",
-        "guzzlehttp/guzzle": "^7.9",
+        "guzzlehttp/guzzle": "^7.10",
         "intervention/image": "^2.7",
-        "laravel/framework": "^12.8",
+        "laravel/framework": "^12.32",
         "laravel/passport": "^12.4",
-        "laravel/scout": "^10.13",
-        "laravel/slack-notification-channel": "^3.5",
-        "laravel/socialite": "^5.18",
+        "laravel/scout": "^10.19",
+        "laravel/slack-notification-channel": "^3.6",
+        "laravel/socialite": "^5.23",
         "laravel/tinker": "^2.10.1",
         "laravel/ui": "^4.6",
         "lcobucci/jwt": "^5.5",
@@ -50,7 +50,7 @@
         "symfony/mailgun-mailer": "^7.2"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.15",
+        "barryvdh/laravel-debugbar": "^3.16",
         "fakerphp/faker": "^1.23",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
@@ -92,7 +92,6 @@
             "@php artisan package:discover --ansi",
             "@php artisan filament:upgrade"
         ],
-        "test": "phpunit",
         "dev": [
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"

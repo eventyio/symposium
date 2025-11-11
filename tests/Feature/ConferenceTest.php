@@ -1479,7 +1479,7 @@ class ConferenceTest extends TestCase
         $response->assertSee('An issue has been reported for this conference.');
     }
 
-    /** @test */
+    #[Test]
     public function deleting_a_conference()
     {
         $user = User::factory()->create();

@@ -49,7 +49,7 @@ class AcceptanceTest extends TestCase
         $this->assertEquals(0, $talk->acceptances()->count());
     }
 
-    /** @test */
+    #[Test]
     public function users_cannot_delete_acceptances_of_other_users(): void
     {
         $userA = User::factory()->create();

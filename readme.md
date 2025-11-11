@@ -29,7 +29,7 @@ A fun side project by some lovely folks at [Tighten Co.](http://tighten.co/).
 	
 ```bash
 ALGOLIA_APP_ID=your-app-id-key
-ALGOLIA_SECRET=your-secret-key
+ALGOLIA_SECRET=your-search-api-key
 ```
     
 6. Generate an application key 
@@ -52,13 +52,11 @@ php artisan passport:install
     
 9. [Install frontend dependencies](https://docs.npmjs.com/cli/install) with `npm install`
 10. Build CSS with `npm run dev`
-11. Configure a web server, such as the [built-in PHP web server](http://php.net/manual/en/features.commandline.webserver.php), to use the `public` directory as the document root.
+11. If you're not running a tool like Valet or Herd, configure a web server, such as the [built-in PHP web server](http://php.net/manual/en/features.commandline.webserver.php), to use the `public` directory as the document root.
 
 ```bash
 php -S localhost:8080 -t public
 ```
-
-12. Run tests with `composer test`.
 
 ## Upgrading
 
