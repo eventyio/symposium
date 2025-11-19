@@ -145,8 +145,8 @@ class AccountController extends Controller
         }
 
         // Store the new profile pictures
-        Storage::put(User::PROFILE_PICTURE_THUMB_PATH . $picture->hashName(), $thumb->stream());
-        Storage::put(User::PROFILE_PICTURE_HIRES_PATH . $picture->hashName(), $hires->stream());
+        Storage::disk('public')->put(User::PROFILE_PICTURE_THUMB_PATH . $picture->hashName(), $thumb->stream());
+        Storage::disk('public')->put(User::PROFILE_PICTURE_HIRES_PATH . $picture->hashName(), $hires->stream());
 
         // Save the updated filename to the user
         $user->updateProfilePicture($picture->hashName());
