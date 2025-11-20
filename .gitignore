@@ -12,6 +12,7 @@
 /public/js/filament
 /public/js/location.js
 /public/js/location.js.map
+/public/storage
 /storage/debugbar
 /storage/framework/testing
 /.phpunit.cache

@@ -34,7 +34,7 @@
                         <x-nav-item route="speakers-public.index">Our speakers</x-nav-item>
                         <x-nav-item route="conferences.index">Conferences</x-nav-item>
                         <x-mobile-nav-item route="login">Sign in with email</x-mobile-nav-item>
-                        <x-mobile-nav-item url="login/github">Sign in with GitHub</x-mobile-nav-item>
+                        <x-mobile-nav-item url="{{ url('login/github') }}">Sign in with GitHub</x-mobile-nav-item>
                     @endif
                 </div>
                 <x-button.mobile-nav/>
@@ -51,7 +51,7 @@
                 </x-slot>
                 <x-slot name="items">
                     <x-menu.item route="login">Sign in with email</x-menu.item>
-                    <x-menu.item url="login/github">Sign in with GitHub</x-menu.item>
+                    <x-menu.item url="{{ url('login/github') }}">Sign in with GitHub</x-menu.item>
                 </x-slot>
             </x-menu>
         @else
