@@ -43,38 +43,38 @@ class GeocoderTest extends TestCase
     #[Test]
     public function invalid_addresses_are_cached(): void
     {
-        cache()->delete('invalid-address::' . md5('fake-address'));
-        $this->assertFalse(cache()->has('invalid-address::' . md5('fake-address')));
+        cache()->delete('invalid-address::'.md5('fake-address'));
+        $this->assertFalse(cache()->has('invalid-address::'.md5('fake-address')));
 
         $this->fakeResponse(null);
 
         try {
             app(Geocoder::class)->geocode('fake-address');
         } catch (InvalidAddressGeocodingException $e) {
-            $this->assertTrue(cache()->has('invalid-address::' . md5('fake-address')));
+            $this->assertTrue(cache()->has('invalid-address::'.md5('fake-address')));
 
             return;
         }
 
-        $this->fail('An ' . InvalidAddressGeocodingException::class . ' exception was expected but not thrown');
+        $this->fail('An '.InvalidAddressGeocodingException::class.' exception was expected but not thrown');
     }
 
     #[Test]
     public function cached_invalid_addresses_are_not_geocoded(): void
     {
         Http::fake();
-        cache()->set('invalid-address::' . md5('fake-address'), true);
+        cache()->set('invalid-address::'.md5('fake-address'), true);
 
         try {
             app(Geocoder::class)->geocode('fake-address');
         } catch (InvalidAddressGeocodingException $e) {
             Http::assertNothingSent();
-            $this->assertTrue(cache()->has('invalid-address::' . md5('fake-address')));
+            $this->assertTrue(cache()->has('invalid-address::'.md5('fake-address')));
 
             return;
         }
 
-        $this->fail('An ' . InvalidAddressGeocodingException::class . ' exception was expected but not thrown');
+        $this->fail('An '.InvalidAddressGeocodingException::class.' exception was expected but not thrown');
     }
 
     private function fakeAddressResponse($country, $city, $state = null)

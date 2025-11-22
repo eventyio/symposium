@@ -41,7 +41,7 @@ class ConferenceIssueResource extends Resource
                             ->formatStateUsing(fn ($record) => $record->conference->title),
                         TextInput::make('Event dates')
                             ->formatStateUsing(function ($record) {
-                                return $record->conference->startsAtDisplay() . ' - ' . $record->conference->endsAtDisplay();
+                                return $record->conference->startsAtDisplay().' - '.$record->conference->endsAtDisplay();
                             }),
                         Grid::make(3)->columnSpan(1)->schema([
                             TextInput::make('url')
@@ -57,7 +57,7 @@ class ConferenceIssueResource extends Resource
                         TextInput::make('cfp_dates')
                             ->label('CFP dates')
                             ->formatStateUsing(function ($record) {
-                                return $record->conference->cfpStartsAtDisplay() . ' - ' . $record->conference->cfpEndsAtDisplay();
+                                return $record->conference->cfpStartsAtDisplay().' - '.$record->conference->cfpEndsAtDisplay();
                             }),
                     ]),
                 ]),

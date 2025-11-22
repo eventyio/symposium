@@ -5,6 +5,7 @@ namespace App\Casts;
 class Coordinates
 {
     protected $latitude;
+
     protected $longitude;
 
     public function __construct($latitude, $longitude)

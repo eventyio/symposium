@@ -142,7 +142,7 @@ class TalkTest extends TestCase
         $talk->revisions()->save($current);
 
         $response = $this->actingAs($user)
-            ->get("talks/{$talk->id}?revision=" . $firstDraft->id);
+            ->get("talks/{$talk->id}?revision=".$firstDraft->id);
 
         $response->assertSuccessful();
         $response->assertSee('First Draft');

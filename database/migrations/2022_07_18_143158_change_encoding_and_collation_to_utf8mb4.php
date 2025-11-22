@@ -49,7 +49,7 @@ return new class extends Migration
         }
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::statement('ALTER DATABASE ' . config('database.connections.mysql.database') . " CHARACTER SET = {$encoding} COLLATE = {$collation}");
+        DB::statement('ALTER DATABASE '.config('database.connections.mysql.database')." CHARACTER SET = {$encoding} COLLATE = {$collation}");
 
         foreach ($this->tables as $table) {
             DB::statement("ALTER TABLE {$table} CONVERT TO CHARACTER SET {$encoding} COLLATE {$collation};");
@@ -83,7 +83,7 @@ return new class extends Migration
         }
 
         if ($this->isEnum($table, $column)) {
-            return "enum('" . implode("','", $this->enumColumns["{$table}.{$column}"]) . "')";
+            return "enum('".implode("','", $this->enumColumns["{$table}.{$column}"])."')";
         }
 
         $length = DB::connection()->getDoctrineColumn($table, $column)->getLength();
