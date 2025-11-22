@@ -49,7 +49,7 @@ class AppServiceProvider extends ServiceProvider
             Event::subscribe(SlackSubscriber::class);
         }
 
-        require app_path() . '/macros.php';
+        require app_path().'/macros.php';
 
         Paginator::useTailwind();
 

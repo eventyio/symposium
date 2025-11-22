@@ -236,7 +236,7 @@ class Conference extends UuidBase
             return $this->starts_at->format('F j, Y');
         }
 
-        return $this->starts_at->format('M j Y') . ' - ' . $this->ends_at->format('M j Y');
+        return $this->starts_at->format('M j Y').' - '.$this->ends_at->format('M j Y');
     }
 
     public function toSearchableArray()

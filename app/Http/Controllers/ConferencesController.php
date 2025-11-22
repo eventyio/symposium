@@ -31,7 +31,7 @@ class ConferencesController extends Controller
         Event::dispatch('new-conference', [$conference]);
         Session::flash('success-message', 'Successfully created new conference.');
 
-        return redirect('conferences/' . $conference->id);
+        return redirect('conferences/'.$conference->id);
     }
 
     public function show($id)
@@ -63,7 +63,7 @@ class ConferencesController extends Controller
         $conference = Conference::findOrFail($id);
 
         if ($conference->author_id !== auth()->id() && ! auth()->user()->isAdmin()) {
-            Log::error('User ' . auth()->user()->id . " tried to edit a conference they don't own.");
+            Log::error('User '.auth()->user()->id." tried to edit a conference they don't own.");
 
             return redirect('/');
         }
@@ -80,7 +80,7 @@ class ConferencesController extends Controller
         $conference = Conference::findOrFail($id);
 
         if ($conference->author_id !== auth()->id() && ! auth()->user()->isAdmin()) {
-            Log::error('User ' . auth()->user()->id . " tried to edit a conference they don't own.");
+            Log::error('User '.auth()->user()->id." tried to edit a conference they don't own.");
 
             return redirect('/');
         }
@@ -96,7 +96,7 @@ class ConferencesController extends Controller
 
         Session::flash('success-message', 'Successfully edited conference.');
 
-        return redirect('conferences/' . $conference->id);
+        return redirect('conferences/'.$conference->id);
     }
 
     public function destroy($id): RedirectResponse

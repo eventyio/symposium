@@ -57,14 +57,14 @@ class ConferenceImporter
                 'date',
                 'after:cfp_starts_at',
                 $event->dateEventStart ? 'before:starts_at' : '',
-                'before:' . Carbon::parse($event->dateCfpStart)->addYears(2),
+                'before:'.Carbon::parse($event->dateCfpStart)->addYears(2),
             ],
             'starts_at' => ['nullable', 'date'],
             'ends_at' => [
                 'nullable',
                 'date',
                 'after_or_equal:start_date',
-                'before:' . Carbon::parse($event->dateEventStart)->addYears(2),
+                'before:'.Carbon::parse($event->dateEventStart)->addYears(2),
             ],
         ]);
 

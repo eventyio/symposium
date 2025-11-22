@@ -1,20 +1,10 @@
-name: Lint
+name: Coding Standards
 
-on:
-    push:
-        branches: [ main ]
-    pull_request:
+on: [push]
+
+permissions:
+  contents: write
 
 jobs:
-  duster:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-      - name: "Duster Lint"
-        uses: tighten/duster-action@v3
-        with:
-          args: lint
+  lint:
+    uses: laravel/.github/.github/workflows/coding-standards.yml@main

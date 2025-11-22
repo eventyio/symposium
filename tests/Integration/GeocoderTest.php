@@ -43,14 +43,14 @@ class GeocoderTest extends TestCase
     public function invalid_addresses_are_only_attempted_once(): void
     {
         $geocoder = app(Geocoder::class);
-        $this->assertNull(cache('invalid-address::' . md5('The Death Star')));
+        $this->assertNull(cache('invalid-address::'.md5('The Death Star')));
 
         try {
             $geocoder->geocode('The Death Star');
         } catch (InvalidAddressGeocodingException $e) {
         }
 
-        $this->assertNotNull(cache('invalid-address::' . md5('The Death Star')));
+        $this->assertNotNull(cache('invalid-address::'.md5('The Death Star')));
 
         try {
             Http::fake();

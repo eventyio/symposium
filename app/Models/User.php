@@ -55,8 +55,8 @@ class User extends Authenticatable implements FilamentUser
             $user->bios()->delete();
 
             if ($user->profile_picture && strpos($user->profile_picture, '/') === false) {
-                Storage::delete(self::PROFILE_PICTURE_THUMB_PATH . $user->profile_picture);
-                Storage::delete(self::PROFILE_PICTURE_HIRES_PATH . $user->profile_picture);
+                Storage::delete(self::PROFILE_PICTURE_THUMB_PATH.$user->profile_picture);
+                Storage::delete(self::PROFILE_PICTURE_HIRES_PATH.$user->profile_picture);
             }
 
             DB::table('favorites')->where('user_id', $user->id)->delete();
@@ -152,7 +152,7 @@ class User extends Authenticatable implements FilamentUser
             return Gravatar::get($this->email, 'profile');
         }
 
-        return asset('/storage/' . self::PROFILE_PICTURE_THUMB_PATH . $this->profile_picture);
+        return asset('/storage/'.self::PROFILE_PICTURE_THUMB_PATH.$this->profile_picture);
     }
 
     public function getProfilePictureHiresAttribute()
@@ -161,7 +161,7 @@ class User extends Authenticatable implements FilamentUser
             return Gravatar::get($this->email, 'hire');
         }
 
-        return asset('/storage/' . self::PROFILE_PICTURE_HIRES_PATH . $this->profile_picture);
+        return asset('/storage/'.self::PROFILE_PICTURE_HIRES_PATH.$this->profile_picture);
     }
 
     public function toSearchableArray()

@@ -44,7 +44,7 @@ class SaveConferenceRequest extends FormRequest
             'speaker_package' => ['nullable'],
             'speaker_package.currency' => function ($attribute, $value, $fail) {
                 if (! Money::isValidCurrency($value)) {
-                    $fail($attribute . ' must be a valid currency type.');
+                    $fail($attribute.' must be a valid currency type.');
                 }
             },
             ...collect(SpeakerPackage::CATEGORIES)

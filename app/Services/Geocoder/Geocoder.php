@@ -29,7 +29,7 @@ class Geocoder
             ->json();
 
         if (! count($response['results'])) {
-            cache()->set('invalid-address::' . md5($address), true);
+            cache()->set('invalid-address::'.md5($address), true);
             throw new InvalidAddressGeocodingException;
         }
 
@@ -38,6 +38,6 @@ class Geocoder
 
     private function isInvalidAddress($address)
     {
-        return cache('invalid-address::' . md5($address));
+        return cache('invalid-address::'.md5($address));
     }
 }

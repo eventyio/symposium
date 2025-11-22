@@ -113,7 +113,7 @@ class CallingAllPapersConferenceImporterTest extends TestCase
             return;
         }
 
-        $this->fail('An ' . UnexpectedValueException::class . ' was expected but not thrown');
+        $this->fail('An '.UnexpectedValueException::class.' was expected but not thrown');
     }
 
     #[Test]
@@ -554,7 +554,7 @@ class CallingAllPapersConferenceImporterTest extends TestCase
             return;
         }
 
-        $this->fail('An ' . UnexpectedValueException::class . ' was expected but not thrown');
+        $this->fail('An '.UnexpectedValueException::class.' was expected but not thrown');
     }
 
     #[Test]

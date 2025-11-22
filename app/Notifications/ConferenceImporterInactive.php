@@ -23,7 +23,7 @@ class ConferenceImporterInactive extends Notification
                 $attachment
                     ->title('Conference importer may be inactive')
                     ->content(
-                        'The last successful run was at ' . cache('conference_importer_last_ran_at')
+                        'The last successful run was at '.cache('conference_importer_last_ran_at')
                     )
                     ->timestamp(Carbon::now());
             });

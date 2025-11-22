@@ -16,7 +16,7 @@ class EditConference extends EditRecord
             return parent::getHeading();
         }
 
-        return parent::getHeading() . ' (rejected)';
+        return parent::getHeading().' (rejected)';
     }
 
     protected function getHeaderActions(): array
