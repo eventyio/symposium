@@ -15,9 +15,6 @@
 <x-panel.conference size="xl" :conference="$conference"></x-panel.conference>
 
 <div class="flex flex-col items-end mt-6 mx-auto w-full">
-    <x-button.secondary :href="route('conferences.issues.create', $conference)">
-        Report an Issue
-    </x-button.secondary>
 </div>
 
 <x-panel size="xl" title="My Talks" class="mt-6">

@@ -70,10 +70,6 @@ Route::middleware('auth')->group(function () {
     Route::get('talks/{id}/restore', [TalksController::class, 'restore'])->name('talks.restore');
     Route::resource('talks', TalksController::class);
     Route::resource('conferences', ConferencesController::class)->except('index', 'create', 'store', 'show');
-    Route::get('conferences/{conference}/issues/create', [ConferenceIssuesController::class, 'create'])
-        ->name('conferences.issues.create');
-    Route::post('conferences/{conference}/issues', [ConferenceIssuesController::class, 'store'])
-        ->name('conferences.issues.store');
     Route::resource('bios', BiosController::class);
 });
 
