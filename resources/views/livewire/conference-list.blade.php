@@ -71,15 +71,4 @@
     @endforelse
 
     <div class="mt-4">{{ $conferenceQuery->links() }}</div>
-
-    @if (auth()->user())
-        <div class="mt-4 text-right">
-            <x-button.primary
-                :href="route('conferences.create')"
-                icon="plus"
-            >
-                Suggest a Missing Conference
-            </x-button.primary>
-        </div>
-    @endif
 </div>

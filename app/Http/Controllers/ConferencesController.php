@@ -7,33 +7,11 @@ use App\Models\Conference;
 use App\Services\Currency;
 use App\Transformers\TalkForConferenceTransformer as TalkTransformer;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
-use Illuminate\View\View;
 
 class ConferencesController extends Controller
 {
-    public function create(): View
-    {
-        return view('conferences.create', [
-            'conference' => new Conference,
-            'currencies' => Currency::all(),
-        ]);
-    }
-
-    public function store(SaveConferenceRequest $request): RedirectResponse
-    {
-        $conference = Conference::create(array_merge($request->validated(), [
-            'author_id' => auth()->user()->id,
-        ]));
-
-        Event::dispatch('new-conference', [$conference]);
-        Session::flash('success-message', 'Successfully created new conference.');
-
-        return redirect('conferences/'.$conference->id);
-    }
-
     public function show($id)
     {
         if (auth()->guest()) {
