@@ -1,4 +1,3 @@
-![Symposium_banner](https://raw.githubusercontent.com/tighten/symposium/develop/symposium-banner.png)
 # Symposium
 [![Actions Status](https://img.shields.io/github/actions/workflow/status/tighten/symposium/test.yml?branch=main)](https://github.com/tighten/symposium/actions)
 
