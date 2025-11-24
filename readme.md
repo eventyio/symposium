@@ -1,5 +1,5 @@
 # Symposium
-[![Actions Status](https://img.shields.io/github/actions/workflow/status/eventy/symposium/test.yml?branch=main)](https://github.com/eventy/symposium/actions)
+[![Actions Status](https://img.shields.io/github/actions/workflow/status/eventyio/symposium/test.yml?branch=main)](https://github.com/eventyio/symposium/actions)
 
 A web app for conference speakers to track talks, bios, and conferences. Free, available online at [Symposiumapp.com](http://symposiumapp.com/).
 
@@ -21,7 +21,7 @@ A web app for conference speakers to track talks, bios, and conferences. Free, a
 1. (Optionally) [Fork this repository](https://help.github.com/articles/fork-a-repo/)
 2. Clone the repository locally
 3. [Install dependencies](https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies) with `composer install`
-4. Copy [`.env.example`](https://github.com/eventy/symposium/blob/master/.env.example) to `.env` and modify its contents to reflect your local environment.
+4. Copy [`.env.example`](https://github.com/eventyio/symposium/blob/master/.env.example) to `.env` and modify its contents to reflect your local environment.
 5. Place your Algolia keys in the `.env` file. This is also required for running PHPUnit tests.
 	
 ```bash
@@ -76,7 +76,7 @@ If you discover any security related issues, please email hello@eventy.io instea
 ## Credits
 - [Matt Stauffer](https://github.com/mattstauffer)
 - [Andrew Morgan](https://github.com/andrewmile)
-- [All Contributors](https://github.com/eventy/symposium/graphs/contributors)
+- [All Contributors](https://github.com/eventyio/symposium/graphs/contributors)
 
 ## License
 
