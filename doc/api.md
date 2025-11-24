@@ -7,7 +7,7 @@ Type                              | Resource                                    
 [Conferences](#conferences)       | [GET /api/conferences](#conferences)                                        | Conferences
 [Conference](#conference)         | [GET /api/conference/:id](#conference)                                      | Conference
 [User Talks](#talks)              | [GET /api/users/:id/talks](#talks)                                          | Talks for authenticated user
-[Talk](#talk)                     | [GET /api/talkx/:id](#talk)                                                 | Talk information
+[Talk](#talk)                     | [GET /api/talks/:id](#talk)                                                 | Talk information
 [User Bios](#bios)                | [GET /api/users/:id/bios](#bios)                                            | Bios for authenticated user
 [Bio](#bio)                       | [GET /api/bios/:id](#bio)                                                   | Bio information
 [Me](#me)                         | [GET /api/me](#me)                                                          | Information about authenticated user
