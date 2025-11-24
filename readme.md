@@ -55,12 +55,6 @@ php artisan passport:install
 php -S localhost:8080 -t public
 ```
 
-## Upgrading
-
-```bash
-composer update tighten/symposium
-```
-
 ## Testing
 
 ```bash

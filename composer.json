@@ -57,8 +57,7 @@
         "laravel/pint": "^1.25",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
-        "phpunit/phpunit": "^11.5.3",
-        "tightenco/duster": "^3.0"
+        "phpunit/phpunit": "^11.5.3"
     },
     "autoload": {
         "psr-4": {
