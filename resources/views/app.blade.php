@@ -60,10 +60,10 @@
     @vite('resources/js/app.js')
     @stack('scripts')
 
-    @if (! App::isLocal())
+    @production
     <!-- Fathom - beautiful, simple website analytics -->
-    <script src="https://cdn.usefathom.com/script.js" data-site="BHIEZUKG" defer></script>
+    <script src="https://cdn.usefathom.com/script.js" data-site="IUITLCGM" defer></script>
     <!-- / Fathom -->
-    @endif
+    @endproduction
 </body>
 </html>
