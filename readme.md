@@ -65,7 +65,7 @@ php artisan test
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
-If you discover any security related issues, please email hello@eventy.io instead of using the issue tracker.
+If you discover any security related issues, please email support@eventy.io instead of using the issue tracker.
 
 ## Credits
 - [Matt Stauffer](https://github.com/mattstauffer)
