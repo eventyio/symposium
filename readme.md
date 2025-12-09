@@ -1,3 +1,5 @@
+> **Symposium is now part of [Eventy](https://eventy.io)
+
 # Symposium
 [![Actions Status](https://img.shields.io/github/actions/workflow/status/eventyio/symposium/test.yml?branch=main)](https://github.com/eventyio/symposium/actions)
 
